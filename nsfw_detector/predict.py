@@ -49,7 +49,7 @@ def classify_bytes(model, image_bytes, image_dim=IMAGE_DIM):
 
     # Categories to map the probabilities
     categories = ['drawings', 'hentai', 'neutral', 'porn', 'sexy']
-    print(probs)
+    #print(probs)
     # Convert predictions into a dictionary format with labels as keys
     predictions = {}
     for i, category in enumerate(categories):
