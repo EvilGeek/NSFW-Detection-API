@@ -173,23 +173,6 @@ def predict_api():
 def not_found_error(error):
     return jsonify({"status": False, "error": "Not Found", "message": "The requested resource could not be found."}), 404
 
-@app.errorhandler(500)
-def internal_error(error):
-    return jsonify({"status": False, "error": "Internal Server Error", "message": "An unexpected error occurred on the server."}), 500
-
-@app.errorhandler(400)
-def bad_request_error(error):
-    return jsonify({"status": False, "error": "Bad Request", "message": "The request could not be understood or was missing required parameters."}), 400
-
-@app.errorhandler(Exception)
-def handle_exception(e):
-    response = {
-        "status": False, 
-        "error": "Server Error",
-        "message": str(e),
-    }
-    return jsonify(response), 500 if isinstance(e, Exception) else e.code
-
 
 
 if __name__ == "__main__":
