@@ -115,7 +115,13 @@ def is_valid_url(url):
 
 @app.route("/")
 def home_api():
-    return jsonify({"status": "OK"})
+    """Health check endpoint that lists all available endpoints."""
+    endpoints = {
+        "/predict": "Predict if an image is NSFW using a URL or uploaded file.",
+        "/ping": "Check server status.",
+    }
+    return jsonify({"status": "OK", "available_endpoints": endpoints})
+
 
 @app.route("/ping/")
 @app.route("/ping")
