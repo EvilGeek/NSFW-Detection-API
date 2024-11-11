@@ -1,7 +1,9 @@
 import io
 import numpy as np
+from os.path import exists
 import tensorflow as tf
 from tensorflow import keras
+import tensorflow_hub as hub
 from tensorflow.keras.preprocessing.image import img_to_array
 from PIL import Image
 
