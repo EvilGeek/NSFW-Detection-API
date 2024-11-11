@@ -164,7 +164,7 @@ def predict_api():
         return jsonify({"status": False, "error": "Image data could not be processed."}), 500
 
     try:
-        print(image_bytes)
+       # print(image_bytes)
         predictions = prediction(image_bytes)
         if predictions:
             predictions["status"] = True
